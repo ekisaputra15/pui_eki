@@ -47,7 +47,6 @@ Route::middleware(['auth'])->group(function () {
     // Waitress
     Route::middleware(['role:waitress'])->prefix('staff/waitress')->name('waitress.')->group(function () {
         Route::get('/', [StaffController::class, 'waitressIndex'])->name('index');
-        Route::get('/scan', [StaffController::class, 'waitressScan'])->name('scan');
         Route::get('/history', [StaffController::class, 'waitressHistory'])->name('history');
         Route::post('/clear', [StaffController::class, 'clearTable'])->name('clear');
     });

@@ -66,11 +66,6 @@ class StaffController extends Controller
         return view('staff.waitress.index', compact('tables', 'history'));
     }
 
-    public function waitressScan()
-    {
-        return view('staff.waitress.scan');
-    }
-
     public function clearTable(Request $request)
     {
         $table = \App\Models\Table::where('name', $request->table_id)->first();
