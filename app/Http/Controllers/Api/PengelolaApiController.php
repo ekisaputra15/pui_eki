@@ -26,6 +26,7 @@ class PengelolaApiController extends Controller
 
         $formattedOrders = $orders->map(function ($order) {
             return [
+                'id' => $order->id,
                 'order_id' => $order->order_id,
                 'table_id' => $order->table_id,
                 'total' => (float) $order->total,
