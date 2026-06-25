@@ -7,13 +7,13 @@
 @endphp
 
 <!-- Page Header -->
-<div class="mb-8 flex items-start justify-between gap-4">
+<div class="mb-8 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
     <div>
         <span class="section-label"><i class="fa-solid fa-utensils mr-1.5"></i>Pengelola</span>
         <h1 class="font-semibold mt-1" style="font-size: 1.75rem; letter-spacing: -0.5px; color: var(--color-ink);">Produk & Menu</h1>
         <p style="color: var(--color-ink-muted); font-size: 0.9375rem; margin-top: 4px;">Kelola daftar menu makanan dan minuman restoran Anda.</p>
     </div>
-    <button type="button" onclick="openModal('create-product-modal')" class="btn btn-brand" style="font-size: 0.875rem; padding: 8px 16px; flex-shrink: 0;">
+    <button type="button" onclick="openModal('create-product-modal')" class="btn btn-brand self-start sm:self-auto" style="font-size: 0.875rem; padding: 8px 16px;">
         <i class="fa-solid fa-plus mr-1.5 text-xs"></i>Tambah Produk
     </button>
 </div>

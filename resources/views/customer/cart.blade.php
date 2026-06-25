@@ -33,9 +33,9 @@ foreach ($cart as $id => $cItem) {
             <a href="{{ route('customer.menu') }}" class="btn btn-brand !px-8 !rounded-2xl">Lihat Menu Sekarang</a>
         </div>
     @else
-        <div class="space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
             <!-- Order List Card -->
-            <div class="card" style="padding: 0; border-radius: 24px; overflow: hidden;">
+            <div class="card lg:col-span-2" style="padding: 0; border-radius: 24px; overflow: hidden;">
                 <div class="px-6 py-4 bg-surface border-b border-[rgba(0,0,0,0.05)]">
                     <span class="t-mono text-[10px] text-ink-faint">Daftar Item</span>
                 </div>
@@ -65,7 +65,7 @@ foreach ($cart as $id => $cItem) {
             </div>
 
             <!-- Notes & Submission -->
-            <form method="POST" action="{{ route('customer.checkout') }}">
+            <form method="POST" action="{{ route('customer.checkout') }}" class="lg:col-span-1">
                 @csrf
                 <div class="card mb-6" style="border-radius: 20px; padding: 20px;">
                     <label class="block mb-2 font-semibold text-sm" style="color: var(--color-ink);">Pesan Khusus (Opsional)</label>

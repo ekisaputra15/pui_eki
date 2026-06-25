@@ -2,19 +2,19 @@
 
 @section('content')
 <!-- Page Header -->
-<div class="mb-8 flex items-start justify-between">
+<div class="mb-8 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
     <div>
         <span class="section-label"><i class="fa-solid fa-broom mr-1.5"></i>Waitress</span>
         <h1 class="font-semibold mt-1" style="font-size: 1.75rem; letter-spacing: -0.5px; color: var(--color-ink);">Monitor Status Meja</h1>
         <p style="color: var(--color-ink-muted); font-size: 0.9375rem; margin-top: 4px;">Pantau status kebersihan meja. Gunakan Aplikasi E-MENUGO Mobile untuk membersihkan meja.</p>
     </div>
-    <a href="{{ route('waitress.history') }}" class="btn btn-ghost" style="font-size: 0.875rem; padding: 8px 14px;">
+    <a href="{{ route('waitress.history') }}" class="btn btn-ghost self-start sm:self-auto" style="font-size: 0.875rem; padding: 8px 14px;">
         <i class="fa-solid fa-clock-rotate-left mr-1.5 text-xs"></i>Riwayat Scan
     </a>
 </div>
 
 <!-- Stats -->
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
     <div class="card" style="padding: 16px 20px; border-color: rgba(239,68,68,0.2);">
         <p class="t-mono text-[10px] mb-1" style="color: #dc2626;">Kotor & Perlu Dibereskan</p>
         <p class="font-bold text-2xl" style="letter-spacing: -0.5px; color: var(--color-ink);">{{ $tables->where('status', 'dirty')->count() }}</p>

@@ -2,15 +2,15 @@
 
 @section('content')
 <!-- Page Header -->
-<div class="mb-8 flex items-start justify-between gap-4">
+<div class="mb-8 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
     <div>
         <span class="section-label"><i class="fa-solid fa-table-cells mr-1.5"></i>Pengelola</span>
         <h1 class="font-semibold mt-1" style="font-size: 1.75rem; letter-spacing: -0.5px; color: var(--color-ink);">Status Meja</h1>
         <p style="color: var(--color-ink-muted); font-size: 0.9375rem; margin-top: 4px;">Overview kondisi semua meja di restoran secara real-time.</p>
     </div>
-    <div class="flex gap-2 flex-shrink-0">
+    <div class="flex flex-wrap gap-2">
         <a href="{{ route('admin.tables.qr.all') }}" target="_blank"
-                class="btn btn-ghost" style="font-size: 0.875rem; padding: 8px 14px;">
+                class="btn btn-ghost shadow-sm" style="font-size: 0.875rem; padding: 8px 14px;">
             <i class="fa-solid fa-print mr-1.5 text-xs"></i>Print Semua
         </a>
     </div>

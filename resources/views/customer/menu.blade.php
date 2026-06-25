@@ -23,7 +23,7 @@ foreach ((session('cart', [])) as $it) {
             <div class="flex-1 h-px bg-[rgba(0,0,0,0.05)]"></div>
         </div>
 
-        <div class="grid grid-cols-1 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             @foreach ($items as $item)
             @php $qty = session("cart.{$item->id}.quantity", 0); @endphp
             <div class="card overflow-hidden group" style="padding: 0; border-radius: 20px; transition: transform 0.2s ease; {{ $qty > 0 ? 'border-color: var(--color-brand);' : '' }}">

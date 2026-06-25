@@ -3,15 +3,15 @@
 @section('content')
 
 <!-- Page Header -->
-<div class="mb-8 flex items-start justify-between gap-4">
+<div class="mb-8 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
     <div>
         <span class="section-label"><i class="fa-solid fa-table-cells-large mr-1.5"></i>Manajemen Meja</span>
         <h1 class="font-semibold mt-1" style="font-size: 1.75rem; letter-spacing: -0.5px; color: var(--color-ink);">Meja & QR Code</h1>
         <p style="color: var(--color-ink-muted); font-size: 0.9375rem; margin-top: 4px;">Kelola meja, generate QR, dan cetak untuk ditempel di meja restoran.</p>
     </div>
-    <div class="flex gap-2 flex-shrink-0">
+    <div class="flex flex-wrap gap-2">
         <a href="{{ route('admin.tables.qr.all') }}" target="_blank"
-                class="btn btn-ghost" style="font-size: 0.875rem; padding: 8px 14px;">
+                class="btn btn-ghost shadow-sm" style="font-size: 0.875rem; padding: 8px 14px;">
             <i class="fa-solid fa-print mr-1.5 text-xs"></i>Print Semua
         </a>
         <button type="button" onclick="document.getElementById('add-table-modal').classList.remove('hidden'); document.getElementById('add-table-modal').classList.add('flex');"
@@ -29,7 +29,7 @@
 @endif
 
 <!-- Stats -->
-<div class="grid grid-cols-3 gap-4 mb-8">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
     <div class="card" style="padding: 16px 20px;">
         <p class="t-mono text-[10px] mb-1" style="color: var(--color-ink-faint);">Total Meja</p>
         <p class="font-bold text-2xl" style="letter-spacing: -0.5px; color: var(--color-ink);">{{ $tables->count() }}</p>

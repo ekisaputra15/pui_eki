@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Page Header -->
-<div class="mb-8 flex items-start justify-between gap-4">
+<div class="mb-8 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
     <div>
         <span class="section-label">
             <i class="fa-solid fa-arrow-left mr-1.5 text-xs cursor-pointer" onclick="history.back()"></i>
@@ -13,13 +13,13 @@
         </h1>
         <p style="color: var(--color-ink-muted); font-size: 0.9375rem; margin-top: 4px;">Pesanan aktif dengan status pending, diproses, atau dibuat.</p>
     </div>
-    <a href="{{ route('cashier.tables') }}" class="btn btn-ghost" style="font-size: 0.875rem; padding: 8px 14px; flex-shrink: 0;">
+    <a href="{{ route('cashier.tables') }}" class="btn btn-ghost self-start sm:self-auto" style="font-size: 0.875rem; padding: 8px 14px;">
         <i class="fa-solid fa-table-cells-large mr-1.5 text-xs"></i>Semua Meja
     </a>
 </div>
 
 <!-- Stats -->
-<div class="grid grid-cols-3 gap-4 mb-8">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
     <div class="card" style="padding: 16px 20px;">
         <p class="t-mono text-[10px] mb-1" style="color: var(--color-ink-faint);">Pesanan Aktif</p>
         <p class="font-bold text-2xl" style="letter-spacing: -0.5px; color: var(--color-ink);">{{ $activeOrders->count() }}</p>

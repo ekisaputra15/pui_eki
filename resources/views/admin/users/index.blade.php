@@ -8,13 +8,13 @@
 @endphp
 
 <!-- Page Header -->
-<div class="mb-8 flex items-start justify-between gap-4">
+<div class="mb-8 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
     <div>
         <span class="section-label"><i class="fa-solid fa-users-gear mr-1.5"></i>Pengelola</span>
         <h1 class="font-semibold mt-1" style="font-size: 1.75rem; letter-spacing: -0.5px; color: var(--color-ink);">Manajemen User</h1>
         <p style="color: var(--color-ink-muted); font-size: 0.9375rem; margin-top: 4px;">Daftar staf dan admin yang memiliki akses ke sistem.</p>
     </div>
-    <button type="button" onclick="openModal('create-user-modal')" class="btn btn-brand" style="font-size: 0.875rem; padding: 8px 16px; flex-shrink: 0;">
+    <button type="button" onclick="openModal('create-user-modal')" class="btn btn-brand self-start sm:self-auto" style="font-size: 0.875rem; padding: 8px 16px;">
         <i class="fa-solid fa-user-plus mr-1.5 text-xs"></i>Tambah User
     </button>
 </div>

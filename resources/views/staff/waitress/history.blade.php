@@ -2,19 +2,19 @@
 
 @section('content')
 <!-- Page Header -->
-<div class="mb-8 flex items-start justify-between gap-4">
+<div class="mb-8 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
     <div>
         <span class="section-label"><i class="fa-solid fa-clock-rotate-left mr-1.5"></i>Riwayat</span>
         <h1 class="font-semibold mt-1" style="font-size: 1.75rem; letter-spacing: -0.5px; color: var(--color-ink);">Riwayat Clear Up</h1>
         <p style="color: var(--color-ink-muted); font-size: 0.9375rem; margin-top: 4px;">Log aktivitas pembersihan meja oleh waitress.</p>
     </div>
-    <a href="{{ route('waitress.index') }}" class="btn btn-brand" style="font-size: 0.875rem; padding: 8px 16px; flex-shrink: 0;">
+    <a href="{{ route('waitress.index') }}" class="btn btn-brand self-start sm:self-auto" style="font-size: 0.875rem; padding: 8px 16px;">
         <i class="fa-solid fa-qrcode mr-1.5 text-xs"></i>Scan Meja
     </a>
 </div>
 
 <!-- Stats -->
-<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
     <div class="card" style="padding: 16px 20px;">
         <p class="t-mono text-[10px] mb-1" style="color: var(--color-ink-faint);">Total Log</p>
         <p class="font-bold text-2xl" style="letter-spacing: -0.5px; color: var(--color-ink);">{{ $totalLogs }}</p>
@@ -55,38 +55,40 @@
         </p>
     </div>
     @else
-    <table class="data-table" style="min-width: 520px;">
-        <thead>
-            <tr>
-                <th><i class="fa-solid fa-table-cells mr-1.5"></i>Meja</th>
-                <th><i class="fa-solid fa-user mr-1.5"></i>Waitress</th>
-                <th style="text-align: right;"><i class="fa-solid fa-clock mr-1.5"></i>Waktu</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($history as $log)
-            <tr>
-                <td>
-                    <span class="flex items-center gap-2">
-                        <span class="badge badge-green">Meja {{ $log->table_id }}</span>
-                    </span>
-                </td>
-                <td>
-                    <div class="flex items-center gap-2">
-                        <div class="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-ink flex-shrink-0"
-                             style="background: var(--color-brand);">
-                            {{ strtoupper(substr($log->waitress_name, 0, 1)) }}
+    <div class="overflow-x-auto">
+        <table class="data-table" style="min-width: 520px;">
+            <thead>
+                <tr>
+                    <th><i class="fa-solid fa-table-cells mr-1.5"></i>Meja</th>
+                    <th><i class="fa-solid fa-user mr-1.5"></i>Waitress</th>
+                    <th style="text-align: right;"><i class="fa-solid fa-clock mr-1.5"></i>Waktu</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($history as $log)
+                <tr>
+                    <td>
+                        <span class="flex items-center gap-2">
+                            <span class="badge badge-green">Meja {{ $log->table_id }}</span>
+                        </span>
+                    </td>
+                    <td>
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-ink flex-shrink-0"
+                                 style="background: var(--color-brand);">
+                                {{ strtoupper(substr($log->waitress_name, 0, 1)) }}
+                            </div>
+                            <span style="font-size: 0.9375rem;">{{ $log->waitress_name }}</span>
                         </div>
-                        <span style="font-size: 0.9375rem;">{{ $log->waitress_name }}</span>
-                    </div>
-                </td>
-                <td style="text-align: right;">
-                    <span class="t-mono text-xs" style="color: var(--color-ink-faint);">{{ $log->created_at->format('Y-m-d H:i:s') }}</span>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+                    </td>
+                    <td style="text-align: right;">
+                        <span class="t-mono text-xs" style="color: var(--color-ink-faint);">{{ $log->created_at->format('Y-m-d H:i:s') }}</span>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
     @endif
 </div>
 
